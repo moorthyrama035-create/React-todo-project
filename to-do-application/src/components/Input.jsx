@@ -20,14 +20,14 @@ const Input = ({ addinput, input, setinput }) => {
       <span>
         <input
           value={input}
-          className="rounded  focus:outline-2 focus:outline-blue-100 outline-2 p-2 outline-purple-500"
+          className="rounded md:text-xl lg:text-2xl focus:outline-2 focus:outline-blue-100 outline-2 p-2 outline-purple-500"
           onChange={inputhandle}
           type="text"
         />
       </span>
 
       <button
-        className="bg-purple-500  px-3 text-[12px] md:p-2 rounded hover:cursor-pointer active:scale-95"
+        className="bg-purple-500 lg:text-2xl  px-3 text-[12px] md:p-2 rounded hover:cursor-pointer active:scale-95"
         onClick={() => {
           if (err) {
             addinput(input);

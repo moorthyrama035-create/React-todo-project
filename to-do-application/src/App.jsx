@@ -3,7 +3,7 @@ import Input from "./components/Input";
 import { List } from "./components/List";
 import { createContext } from "react";
 export let InputContext = createContext();
-
+import Swal from 'sweetalert2'
 function App() {
   if (!localStorage.getItem("list")) {
     localStorage.setItem("list", JSON.stringify([]));
@@ -16,9 +16,16 @@ function App() {
   let [input, setinput] = useState("");
   let [data, setdata] = useState(lists);
 
+  
   function adddata(items) {
     if (!(items.trim() == "")) {
       setdata([...data, { items, id: data.length + 1 }]);
+      Swal.fire({
+  title: "your task added!",
+  text: "You clicked the button!",
+  icon: "success"
+});
+      
     }
   }
   useEffect(() => {
@@ -46,6 +53,10 @@ function App() {
             </h1>
             <Input addinput={adddata} input={input} setinput={setinput}></Input>
           </div>
+          {
+             data.length===0 &&  <h1 className=" block text-center pt-20 text-2xl font-medium text-shadow-amber-50 text-blue-300 text-shadow-xs">No tasks yet ! Start by adding your first task..!</h1>
+            
+          }
           <List list={data} setlist={setdata}></List>
         </section>
       </InputContext.Provider>

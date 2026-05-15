@@ -6,7 +6,7 @@ export const List = ({ list, setlist }) => {
   let colors = ["bg-orange-400", "bg-amber-800", "bg-green-900", "bg-pink-500"];
 
   return (
-    <section className="pt-4 px-8 relative z-10  text-white">
+    <section className="pt-4 px-8 relative z-10 md:text-2xl xl:text-4xl  text-white">
       <ul
         className="grid gap-y-3"
         style={{ listStyle: "none", textDecorationLine: "none" }}
