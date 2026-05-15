@@ -9,8 +9,11 @@ const Edit = ({ id }) => {
     let value = data.find((items) => {
       return items.id === id;
     });
+  
+            setinput(value.items);
+   
 
-    setinput(value.items);
+    
   };
 
   return (
